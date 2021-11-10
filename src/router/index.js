@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Landing from '../views/Landing.vue';
+import Rooms from '../views/Rooms.vue';
 import About from '../views/About.vue';
+import Contact from '../views/Contact.vue';
+import Booking from '../views/Booking.vue';
 
 Vue.use(VueRouter);
 
@@ -12,9 +15,24 @@ const routes = [
     component: Landing,
   },
   {
+    path: '/rooms',
+    name: 'Rooms',
+    component: Rooms,
+  },
+  {
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+  },
+  {
+    path: '/booking',
+    name: 'Booking',
+    component: Booking,
   },
 ];
 

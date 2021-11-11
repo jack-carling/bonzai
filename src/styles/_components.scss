@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 :focus-visible {
   outline: 2px solid $green;
 }
 
+// Navigation
 nav {
   a {
     margin-left: 1rem;
@@ -11,8 +16,8 @@ nav {
   }
 }
 
+// Hero banners
 article.hero {
-  width: 100vw;
   min-height: 280px;
   background-size: cover;
   background-position: center;
@@ -21,12 +26,86 @@ article.hero {
   justify-content: center;
   align-items: center;
   &.landing {
-    background-image: url('~@/assets/hero/landing.jpg');
+    background-image: url('~@/assets/photos/02-night.jpg');
   }
 }
 
+// General padding on all pages
+section.main {
+  padding: 2rem 5rem;
+}
+
+// Custom date component
+div.date {
+  display: inline-block;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  div {
+    width: max-content;
+    border: 1px solid $gray;
+    position: relative;
+    display: flex;
+    padding: 0.5rem;
+    input[type='date'] {
+      margin-left: 0.5rem;
+      border: none;
+    }
+    input[type='date']:focus-visible {
+      outline: none;
+    }
+    i {
+      color: $gray;
+    }
+    i.chevron {
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+    }
+    ::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+// Custom select component
+div.select {
+  display: inline-block;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  div {
+    width: 197px;
+    border: 1px solid $gray;
+    position: relative;
+    display: flex;
+    padding: 0.5rem;
+    select {
+      cursor: pointer;
+      width: 100%;
+      padding: 0 0.5rem;
+      appearance: none;
+      margin-left: 0.5rem;
+      border: none;
+    }
+    i {
+      color: $gray;
+    }
+    i.chevron {
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+    }
+  }
+}
+
+// Quick flexbox and margin
 div.flex {
   display: flex;
+  align-items: flex-end;
   &.top {
     margin-top: 1rem;
   }
@@ -44,6 +123,7 @@ div.flex {
   }
 }
 
+// Custom buttons
 button {
   cursor: pointer;
   appearance: none;
@@ -63,11 +143,26 @@ button {
   }
 }
 
+// Focus on buttons
 button:focus-visible {
   &.green {
     outline: 2px solid $white;
   }
   &.white {
-    outline: 2px solid $dark-gray;
+    outline: 2px solid $red;
+  }
+}
+
+// Image gallery
+section.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  img {
+    max-width: 100%;
+  }
+  img:first-of-type {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
   }
 }

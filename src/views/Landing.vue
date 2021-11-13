@@ -8,7 +8,7 @@
       </div>
     </article>
     <section class="main">
-      <div class="flex gap">
+      <div class="flex gap wrap" id="booking">
         <div class="date">
           <label>Incheckning</label>
           <div>
@@ -44,7 +44,7 @@
         Slappna av och ladda batterierna framför stilla Kolsjön i Norrland, på stranden i Maldiverna eller blå lagunen
         på Island. Hos oss kan du vara där dina drömmar är. Gå bara ut till laddplatsen och säg bonz.ai.
       </p>
-      <section class="gallery">
+      <section class="gallery focus">
         <img src="@/assets/photos/09-day.jpg" alt="" />
         <img src="@/assets/photos/06-night.jpg" alt="" />
         <img src="@/assets/photos/07-day.jpg" alt="" />
@@ -63,4 +63,14 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media screen and (max-width: 950px) {
+  #booking {
+    flex-direction: column;
+    align-items: center;
+    button {
+      margin-top: 1rem;
+    }
+  }
+}
+</style>

@@ -34,6 +34,11 @@ article.hero {
 section.main {
   padding: 2rem 5rem;
 }
+@media screen and (max-width: 600px) {
+  section.main {
+    padding: 2rem 1rem;
+  }
+}
 
 // Custom date component
 div.date {
@@ -121,6 +126,9 @@ div.flex {
   &.gap {
     gap: 1rem;
   }
+  &.wrap {
+    flex-wrap: wrap;
+  }
 }
 
 // Custom buttons
@@ -145,12 +153,7 @@ button {
 
 // Focus on buttons
 button:focus-visible {
-  &.green {
-    outline: 2px solid $white;
-  }
-  &.white {
-    outline: 2px solid $red;
-  }
+  outline: 2px solid $red;
 }
 
 // Image gallery
@@ -161,8 +164,62 @@ section.gallery {
   img {
     max-width: 100%;
   }
-  img:first-of-type {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
+  &.focus {
+    img:first-of-type {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  section.gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  section.gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  section.gallery {
+    grid-template-columns: 1fr;
+    &.focus {
+      img:first-of-type {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  min-height: 260px;
+  background-color: $dark-gray;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 5rem;
+  position: relative;
+  .social {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 3rem;
+    a:focus-visible {
+      outline: 2px solid $white;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding: 2rem 1rem !important;
+    .social {
+      flex-direction: column;
+      right: 2rem;
+      bottom: auto;
+    }
   }
 }

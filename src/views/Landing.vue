@@ -8,7 +8,7 @@
       </div>
     </article>
     <section class="main">
-      <div class="flex gap wrap" id="booking">
+      <div class="flex gap wrap a-end" id="booking">
         <div class="date">
           <label>Incheckning</label>
           <div>

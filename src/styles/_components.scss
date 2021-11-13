@@ -28,6 +28,9 @@ article.hero {
   &.landing {
     background-image: url('~@/assets/photos/02-night.jpg');
   }
+  &.about {
+    background-image: url('~@/assets/photos/07-day.jpg');
+  }
 }
 
 // General padding on all pages
@@ -110,7 +113,6 @@ div.select {
 // Quick flexbox and margin
 div.flex {
   display: flex;
-  align-items: flex-end;
   &.top {
     margin-top: 1rem;
   }
@@ -128,6 +130,12 @@ div.flex {
   }
   &.wrap {
     flex-wrap: wrap;
+  }
+  &.a-end {
+    align-items: flex-end;
+  }
+  &.a-center {
+    align-items: center;
   }
 }
 
@@ -220,6 +228,66 @@ footer {
       flex-direction: column;
       right: 2rem;
       bottom: auto;
+    }
+  }
+}
+
+// Cards
+article.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 650px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Card
+div.card {
+  min-width: 230px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: $white;
+  div.icon {
+    width: 41px;
+    height: 41px;
+    background-color: $white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  &.brown {
+    background-color: $brown;
+    i {
+      color: $brown;
+    }
+  }
+  &.green {
+    background-color: $green;
+    i {
+      color: $green;
+    }
+  }
+  &.dark-gray {
+    background-color: $dark-gray;
+    i {
+      color: $dark-gray;
+    }
+  }
+  &.gray {
+    background-color: $gray;
+    i {
+      color: $gray;
     }
   }
 }

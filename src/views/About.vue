@@ -23,35 +23,35 @@
       <article class="cards">
         <div class="card brown">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">person_pin_circle</i>
           </div>
           <h5>6 olika vyer</h5>
           <p>För endast 300 kr kan du byta till en ny vy när du vill.</p>
         </div>
         <div class="card green">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">support_agent</i>
           </div>
           <h5>Service 24/7</h5>
           <p>Vi är bemannade dygnet runt. Säg bara bonz.ai så svarar vi.</p>
         </div>
         <div class="card dark-gray">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">restaurant</i>
           </div>
           <h5>Restaurang</h5>
           <p>Frukost, lunch och middag ingår i priset.</p>
         </div>
         <div class="card gray">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">local_bar</i>
           </div>
           <h5>4 barer</h5>
           <p>Njut av goda drycker helt gratis dygnet runt.</p>
         </div>
         <div class="card dark-gray">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">wifi</i>
           </div>
           <h5>Wifi</h5>
           <p>Gratis 6g-nät över hela hotellets område.</p>
@@ -65,14 +65,14 @@
         </div>
         <div class="card green">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">phonelink_ring</i>
           </div>
           <h5>Kommunicera</h5>
           <p>Orkar du inte säga bonz.ai kan du använda vår app.</p>
         </div>
         <div class="card brown">
           <div class="icon">
-            <i class="material-icons">location_on</i>
+            <i class="material-icons">credit_card</i>
           </div>
           <h5>Betalning</h5>
           <p>Vi tar emot samtliga aktuella betalningsmedel.</p>

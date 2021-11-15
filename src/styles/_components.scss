@@ -113,6 +113,9 @@ div.select {
 // Quick flexbox and margin
 div.flex {
   display: flex;
+  &.col {
+    flex-direction: column;
+  }
   &.top {
     margin-top: 1rem;
   }
@@ -131,11 +134,17 @@ div.flex {
   &.wrap {
     flex-wrap: wrap;
   }
+  &.a-start {
+    align-items: flex-start;
+  }
   &.a-end {
     align-items: flex-end;
   }
   &.a-center {
     align-items: center;
+  }
+  &.j-sb {
+    justify-content: space-between;
   }
 }
 
@@ -288,6 +297,32 @@ div.card {
     background-color: $gray;
     i {
       color: $gray;
+    }
+  }
+}
+
+// Rooms
+section.rooms {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 1rem;
+  p {
+    margin-bottom: 5rem;
+  }
+  img {
+    max-width: 100%;
+  }
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    div.buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    img:not(:first-of-type) {
+      margin-top: 2rem;
     }
   }
 }

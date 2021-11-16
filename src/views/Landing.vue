@@ -8,37 +8,7 @@
       </div>
     </article>
     <section class="main">
-      <div class="flex gap wrap a-end" id="booking">
-        <div class="date">
-          <label>Incheckning</label>
-          <div>
-            <i class="date material-icons">calendar_today</i>
-            <i class="chevron material-icons">expand_more</i>
-            <input type="date" name="" id="" />
-          </div>
-        </div>
-        <div class="date">
-          <label>Utcheckning</label>
-          <div>
-            <i class="date material-icons">calendar_today</i>
-            <i class="chevron material-icons">expand_more</i>
-            <input type="date" name="" id="" />
-          </div>
-        </div>
-
-        <div class="select">
-          <label>Rum och personer</label>
-          <div>
-            <i class="date material-icons">person</i>
-            <i class="chevron material-icons">expand_more</i>
-            <select name="" id="">
-              <option value="1">1 rum, 1 vuxen</option>
-              <option value="2">1 rum, 2 vuxna</option>
-            </select>
-          </div>
-        </div>
-        <button class="green" @click="$router.push('/rooms')">Boka</button>
-      </div>
+      <DatePickers :dates="dates" @update-settings="handleSettings" />
       <h5>Modernt och stilrent rum nästan var du vill</h5>
       <p>
         Slappna av och ladda batterierna framför stilla Kolsjön i Norrland, på stranden i Maldiverna eller blå lagunen
@@ -60,7 +30,21 @@
 </template>
 
 <script>
-export default {};
+import DatePickers from '../components/DatePickers.vue';
+
+export default {
+  components: {
+    DatePickers,
+  },
+  props: {
+    dates: Object,
+  },
+  methods: {
+    handleSettings(payload) {
+      this.$emit('update-settings', payload);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

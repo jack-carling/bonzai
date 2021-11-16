@@ -2,7 +2,13 @@
   <div id="root">
     <Menu id="menu" />
     <div id="root-grid">
-      <router-view id="view" />
+      <router-view
+        id="view"
+        :location="location"
+        @update-location="handleLocation"
+        :dates="dates"
+        @update-settings="handleSettings"
+      />
       <Footer />
     </div>
   </div>
@@ -12,10 +18,44 @@
 import Menu from './components/Menu.vue';
 import Footer from './components/Footer.vue';
 
+import { format, add } from 'date-fns';
+
 export default {
   components: {
     Menu,
     Footer,
+  },
+  data() {
+    return {
+      dates: {
+        today: '',
+        tomorrow: '',
+        fiveDays: '',
+        oneYear: '',
+        checkIn: '',
+        checkOut: '',
+        people: '1',
+      },
+      location: 'Maldiverna',
+    };
+  },
+  methods: {
+    handleLocation(data) {
+      this.location = data;
+    },
+    handleSettings(data) {
+      this.dates.checkIn = data.checkIn;
+      this.dates.checkOut = data.checkOut;
+      this.dates.people = data.people;
+    },
+  },
+  mounted() {
+    this.dates.today = format(new Date(), 'yyyy-MM-dd');
+    this.dates.tomorrow = format(add(new Date(), { days: 1 }), 'yyyy-MM-dd');
+    this.dates.fiveDays = format(add(new Date(), { days: 5 }), 'yyyy-MM-dd');
+    this.dates.oneYear = format(add(new Date(), { years: 1 }), 'yyyy-MM-dd');
+    this.dates.checkIn = this.dates.tomorrow;
+    this.dates.checkOut = this.dates.fiveDays;
   },
 };
 </script>

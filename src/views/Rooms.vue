@@ -20,8 +20,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('Maldiverna')">Läs mer</button>
+            <button class="white" @click="handleLocation('Maldiverna')">Boka</button>
           </div>
         </div>
         <img src="@/assets/locations/kenya.jpg" alt="" />
@@ -38,8 +38,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('Kenya')">Läs mer</button>
+            <button class="white" @click="handleLocation('Kenya')">Boka</button>
           </div>
         </div>
         <img src="@/assets/locations/island.jpg" alt="" />
@@ -56,8 +56,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('Island')">Läs mer</button>
+            <button class="white" @click="handleLocation('Island')">Boka</button>
           </div>
         </div>
         <img src="@/assets/locations/new_york.jpg" alt="" />
@@ -74,8 +74,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('New York')">Läs mer</button>
+            <button class="white" @click="handleLocation('New York')">Boka</button>
           </div>
         </div>
         <img src="@/assets/locations/charmonix.jpg" alt="" />
@@ -92,8 +92,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('Charmonix')">Läs mer</button>
+            <button class="white" @click="handleLocation('Charmonix')">Boka</button>
           </div>
         </div>
         <img src="@/assets/locations/norrland.jpg" alt="" />
@@ -110,8 +110,8 @@
             Vivamizzle da bomb. Crizzle lorizzle.
           </p>
           <div class="buttons">
-            <button class="green">Läs mer</button>
-            <button class="white">Boka</button>
+            <button class="green" @click="handleLocation('Jukkasjärvi')">Läs mer</button>
+            <button class="white" @click="handleLocation('Jukkasjärvi')">Boka</button>
           </div>
         </div>
       </section>
@@ -120,7 +120,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    handleLocation(location) {
+      this.$emit('update-location', location);
+      this.$router.push('/booking');
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

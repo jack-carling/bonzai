@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="main">
-      <DatePickers :dates="dates" @update-settings="handleSettings" />
+      <DatePickers :dates="dates" @update-settings="handleSettings" @open-modal="$emit('open-modal')" />
       <div class="header flex j-sb a-end">
         <h3>{{ location }}</h3>
         <h5>3000kr / natt</h5>

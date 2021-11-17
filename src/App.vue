@@ -1,5 +1,6 @@
 <template>
   <div id="root">
+    <Modal v-if="showModal" @close-modal="showModal = false" />
     <Menu id="menu" />
     <div id="root-grid">
       <router-view
@@ -8,6 +9,7 @@
         @update-location="handleLocation"
         :dates="dates"
         @update-settings="handleSettings"
+        @open-modal="showModal = true"
       />
       <Footer />
     </div>
@@ -17,6 +19,7 @@
 <script>
 import Menu from './components/Menu.vue';
 import Footer from './components/Footer.vue';
+import Modal from './components/Modal.vue';
 
 import { format, add } from 'date-fns';
 
@@ -24,6 +27,7 @@ export default {
   components: {
     Menu,
     Footer,
+    Modal,
   },
   data() {
     return {
@@ -36,6 +40,7 @@ export default {
         checkOut: '',
         people: '1',
       },
+      showModal: false,
       location: 'Maldiverna',
     };
   },
@@ -61,6 +66,9 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   height: 100vh;

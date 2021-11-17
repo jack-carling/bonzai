@@ -28,7 +28,7 @@
         </select>
       </div>
     </div>
-    <button class="green" @click="$router.push('/rooms')">Boka</button>
+    <button class="green" @click="handleClick">Boka</button>
   </div>
 </template>
 
@@ -69,6 +69,13 @@ export default {
     emitSettings() {
       const payload = { checkIn: this.checkIn, checkOut: this.checkOut, people: this.peopleCount };
       this.$emit('update-settings', payload);
+    },
+    handleClick() {
+      if (this.$route.path === '/') {
+        this.$router.push('/rooms');
+      } else {
+        this.$emit('open-modal');
+      }
     },
   },
 };
